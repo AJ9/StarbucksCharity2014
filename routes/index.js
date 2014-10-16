@@ -7,6 +7,10 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', { title: 'Adam\'s Charity Starbucks Event' });
 });
+/* GET home page. */
+router.get('/thankYou', function(req, res) {
+  res.render('thankYou', { title: 'Thank You!' });
+});
 
 router.post('/order', function(req, res) {
 
@@ -26,7 +30,7 @@ router.post('/order', function(req, res) {
 
 	email.addTo(to);
 	email.setFrom(to);
-	email.setSubject('Starbucks');
+	email.setSubject('Your Charity Starbucks order!');
 	email.setHtml('<style> body {background-color:lightblue} h1   {color:green} p    {color:green}</style><p style="text-align:center">&nbsp;</p><p style="text-align:center">&nbsp;</p><p style="text-align:center"></p><h1 style="text-align:center">Hi bob,</h1><p style="text-align:center">This is a notification from Argus to inform you that your relative, name,  is expieriencing loud noise.</p><p style="text-align:center">You can find more information on what happened in the Argus app on your phone.</p><p style="text-align:center">&nbsp;</p><p style="text-align:center">All the best,</p><p style="text-align:center">Your Argus team</p>');
 	email.addSubstitution("%name%", name);
 	email.addSubstitution("%location%", location);
@@ -42,6 +46,8 @@ router.post('/order', function(req, res) {
 	  console.log(json);
 	});
 
+
+res.redirect('/thankYou');
 });
 
 module.exports = router;
