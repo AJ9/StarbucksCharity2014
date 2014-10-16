@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-router.use(express.bodyParser());
+//router.use(express.bodyParser());
 
 
 /* GET home page. */
@@ -10,14 +10,14 @@ router.get('/', function(req, res) {
 
 router.post('/order', function(req, res) {
 
-	var name = req.body.user.name;
-	var location = req.body.user.location;
-	var drinksize = req.body.drink.size;
-	var drinktype = req.body.drink.type; 
-	var drinkprice = req.body.drink.price;
-	var surcharge = req.body.drink.surcharge;
+	var name = req.body.name;
+	var location = req.body.location;
+	var drinksize = req.body.drinkSize;
+	var drinktype = req.body.drinkType; 
+//	var drinkprice = req.body.drink.price;
+//	var surcharge = req.body.drink.surcharge;
 
-	var to = req.body.user.email;
+	var to = req.body.email;
 	var sendgrid_username   = "rtamizian"
 	var sendgrid_password   = "adamstarbucks";
 
@@ -32,8 +32,8 @@ router.post('/order', function(req, res) {
 	email.addSubstitution("%location%", location);
 	email.addSubstitution("%drinktype%", drinktype);
 	email.addSubstitution("%drinksize%", drinksize);
-	email.addSubstitution("%drinkprice%", drinkprice);
-	email.addSubstitution("%surcharge%", surcharge);
+	//email.addSubstitution("%drinkprice%", drinkprice);
+	//email.addSubstitution("%surcharge%", surcharge);
 	email.addHeader('X-Sent-Using', 'SendGrid-API');
 	email.addHeader('X-Transport', 'web');
 

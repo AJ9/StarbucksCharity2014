@@ -14,24 +14,25 @@
     <p>A minimum 50p charity surcharge will be added to the stanard cost of the drink (rounded up to the nearest 50p for cash orders). You can also pay with PayPal.</p>
 
 <h2>Order:</h2>
+
 <form method="post" action="/order">Name:
-    <input type="text" name="user[name]">University Email:
-    <input type="text" name="user[email]">Location (room number):
-    <input type="text" name="user[location]"><br><br>
+    <input type="text" name="name">University Email:
+    <input type="text" name="email">Location (room number):
+    <input type="text" name="location"><br><br>
 Size: 
-<input type="radio" name="drink[size]" value="Small" checked>Small (Venti)
-<input type="radio" name="drink[size]" value="Medium">Medium (Grande)
-<input type="radio" name="drink[size]" value="Large">Medium (Tall)<br><br>
+<input type="radio" name="drinkSize" value="Small" checked>Small (Venti)
+<input type="radio" name="drinkSize" value="Medium">Medium (Grande)
+<input type="radio" name="drinkSize" value="Large">Medium (Tall)<br><br>
 
 Type: <br>
-<input type="radio" name="drink[type]" value="Pumpkin Spice Latte" checked>Pumpkin Spice Latte<br>
-<input type="radio" name="drink[type]" value="Caffè Americano">Caffè Americano<br>
-<input type="radio" name="drink[type]" value="Flat White">Flat White<br>
-<input type="radio" name="drink[type]" value="Caffè Latte">Caffè Latte<br>
+<input type="radio" name="drinkType" value="Pumpkin Spice Latte" checked>Pumpkin Spice Latte<br>
+<input type="radio" name="drinkType" value="Caffè Americano">Caffè Americano<br>
+<input type="radio" name="drinkType" value="Flat White">Flat White<br>
+<input type="radio" name="drinkType" value="Caffè Latte">Caffè Latte<br>
 
 
 <br>Comments: <br>
-<textarea cols="40" rows="5" name="user[comment]">
+<textarea cols="40" rows="5" name="comment">
 Special requests or comments....
 </textarea>
 
