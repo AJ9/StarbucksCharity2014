@@ -15,15 +15,29 @@
 
 <h2>Order:</h2>
 <form method="post" action="/order">Name:
-    <input type="text" name="user[name]">Email:
-    <input type="text" name="user[email]">Location:
-    <input type="text" name="user[location]"><br>
+    <input type="text" name="user[name]">University Email:
+    <input type="text" name="user[email]">Location (room number):
+    <input type="text" name="user[location]"><br><br>
 Size: 
-<input type="radio" name="drink[size]" value="small" checked>Small (Venti)
-<input type="radio" name="drink[size]" value="medium">Medium (Grande)
-<input type="radio" name="drink[size]" value="large">Medium (Tall)
+<input type="radio" name="drink[size]" value="Small" checked>Small (Venti)
+<input type="radio" name="drink[size]" value="Medium">Medium (Grande)
+<input type="radio" name="drink[size]" value="Large">Medium (Tall)<br><br>
 
-    <input type="submit" value="Submit">
+Type: <br>
+<input type="radio" name="drink[type]" value="Pumpkin Spice Latte" checked>Pumpkin Spice Latte<br>
+<input type="radio" name="drink[type]" value="Caffè Americano">Caffè Americano<br>
+<input type="radio" name="drink[type]" value="Flat White">Flat White<br>
+<input type="radio" name="drink[type]" value="Caffè Latte">Caffè Latte<br>
+
+
+<br>Comments: <br>
+<textarea cols="40" rows="5" name="user[comment]">
+Special requests or comments....
+</textarea>
+
+
+
+    <br><br><input type="submit" value="Submit">
 
 </form>
    
