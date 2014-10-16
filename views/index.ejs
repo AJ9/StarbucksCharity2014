@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -35,10 +36,15 @@ Type: <br>
 <textarea cols="40" rows="5" name="comment">
 Special requests or comments....
 </textarea>
+<br><br>
+Total donation:
+<h3 id="donation">££'s</h3>
+Total amount:
+<h3 id="total">££'s</h3>
+<p>Payment method: <b>Cash on delivery</b>.</p>
 
-
-
-    <br><br><input type="submit" value="Submit">
+<p>By clicking the submit button below you agree to pay the total amount specified above.</p>
+<input type="submit" value="Submit">
 
 </form>
    
