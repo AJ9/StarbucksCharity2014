@@ -6,6 +6,26 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to <%= title %>!</p>
+    <p>Adam is running the <a href="http://www.leicestermarathon.org.uk/">Leicester half marathon</a> on Sunday 26th of October 2014 to raise funds for the Leicester Hospice - <a href="http://www.loros.co.uk/">LOROS</a></p>
+    <p>LOROS provide care and support to terminally ill adult patients and their family.</p>
+    <h2>So what's this all about?</h2>
+    <p>On <b>Monday 20th of October 2014</b> Adam will be making coffee/tea runs to Starbucks between <b>10am-4pm</b>, order your drink below and get it delivered right to your office/room within the CS building.</p>
+    <p>A minimum 50p charity surcharge will be added to the stanard cost of the drink (rounded up to the nearest 50p for cash orders). You can also pay with PayPal.</p>
+
+<h2>Order:</h2>
+<form method="post" action="/order">Name:
+    <input type="text" name="user[name]">Email:
+    <input type="text" name="user[email]">Location:
+    <input type="text" name="user[location]"><br>
+Size: 
+<input type="radio" name="drink[size]" value="small" checked>Small (Venti)
+<input type="radio" name="drink[size]" value="medium">Medium (Grande)
+<input type="radio" name="drink[size]" value="large">Medium (Tall)
+
+    <input type="submit" value="Submit">
+
+</form>
+   
   </body>
 </html>
