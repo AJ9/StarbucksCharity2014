@@ -46,6 +46,27 @@ router.post('/order', function(req, res) {
 	  console.log(json);
 	});
 
+	var adamemail      = new sendgrid.Email();
+	var to = "ajgask@gmail.com";
+	adamemail.addTo(to);
+	adamemail.setFrom(to);
+	adamemail.setSubject('GO GET DAT DRINK!');
+	adamemail.setHtml('Person: %name% <br> Location: %location% <br> Drink: %drinksize% %drinktype% <br> Price: %drinkprice% + %surcharge% = %finalcharge%');
+	adamemail.addSubstitution("%name%", name);
+	adamemail.addSubstitution("%location%", location);
+	adamemail.addSubstitution("%drinktype%", drinktype);
+	adamemail.addSubstitution("%drinksize%", drinksize);
+	adamemail.addSubstitution("%finalcharge%", drinkprice + surcharge);
+	adamemail.addSubstitution("%drinkprice%", drinkprice);
+	adamemail.addSubstitution("%surcharge%", surcharge);
+	adamemail.addHeader('X-Sent-Using', 'SendGrid-API');
+	adamemail.addHeader('X-Transport', 'web');
+
+	sendgrid.send(adamemail, function(err, json) {
+	  if (err) { return console.error(err); }
+	  console.log(json);
+	});
+
 
 res.redirect('/thankYou');
 });
